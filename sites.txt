@@ -1,0 +1,8 @@
+StackOverflow            | stackoverflow.com
+SuperUser                | superuser.com
+AskUbuntu                | askubuntu.com
+ServerFault              | serverfault.com
+Mathematics              | math
+Programmers              | programmers
+English Language & Usage | english
+Unix & Linux             | unix

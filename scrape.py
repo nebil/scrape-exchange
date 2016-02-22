@@ -16,9 +16,20 @@ BLACKLIST = ['ja.', 'meta']
 FILENAME = 'sites.txt'
 
 
+class CustomFormatter(argparse.RawDescriptionHelpFormatter):
+    def __init__(self, prog):
+        super().__init__(prog, max_help_position=28)
+
+    def _format_action_invocation(self, action):
+        command = '{} ({})'.format(*action.option_strings)
+        if action.metavar:
+            command = '{} {}    '.format(command, action.metavar)
+        return command
+
+
 def set_command_list():
     argdict = {
-        'formatter_class': argparse.RawDescriptionHelpFormatter,
+        'formatter_class': CustomFormatter,
         'description': ("A script designed to collect *user_id* "
                         "information from StackExchange's sites."),
         'epilog': """

@@ -95,8 +95,9 @@ def print_all_sites():
             continue
         print('{:36} | {}'.format(name, curl))
 
-clargs = set_command_list()
-if clargs.list:
-    print_all_sites()
-else:
-    scrape(clargs.curl)
+if __name__ == '__main__':
+    clargs = set_command_list()
+    if clargs.list:
+        print_all_sites()
+    else:
+        scrape(clargs.curl)

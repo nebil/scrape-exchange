@@ -17,7 +17,7 @@ FILENAME = 'sites.txt'
 
 def scrape():
     def get_last_user_id(curl):
-        if '.com' not in curl:
+        if '.' not in curl:
             curl += '.stackexchange.com'
 
         rget = requests.get(URL_PREFIX + curl + URL_SUFFIX)
@@ -38,7 +38,7 @@ def scrape():
         all_sites = [process(site) for site in sites]
         all_sites.sort(key=lambda site: site[2], reverse=True)
     for site in all_sites:
-        print('{} | {:18} | {:9,}'.format(*site))
+        print('{} | {:20} | {:9,}'.format(*site))
 
 
 def print_all_sites():

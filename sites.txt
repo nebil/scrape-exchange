@@ -1,8 +1,150 @@
-StackOverflow            | stackoverflow.com
-SuperUser                | superuser.com
-AskUbuntu                | askubuntu.com
-ServerFault              | serverfault.com
-Mathematics              | math
-Programmers              | programmers
-English Language & Usage | english
-Unix & Linux             | unix
+StackOverflow                        | stackoverflow.com
+SuperUser                            | superuser.com
+AskUbuntu                            | askubuntu.com
+ServerFault                          | serverfault.com
+Mathematics                          | math
+Programmers                          | programmers
+StackOverflow на русском             | ru.stackoverflow.com
+Русский язык                         | rus
+AskDifferent                         | apple
+English Language & Usage             | english
+Unix & Linux                         | unix
+Android Enthusiasts                  | android
+Arqade                               | gaming
+Web Applications                     | webapps
+Physics                              | physics
+Cross Validated                      | stats
+Information Security                 | security
+Electrical Engineering               | electronics
+TeX & LaTeX                          | tex
+Code Review                          | codereview
+WordPress Development                | wordpress
+MathOverflow                         | mathoverflow.net
+Database Administrators              | dba
+User Experience                      | ux
+Game Development                     | gamedev
+Geographic Information Systems       | gis
+Science Fiction & Fantasy            | scifi
+Graphic Design                       | graphicdesign
+Webmasters                           | webmasters
+Drupal Answers                       | drupal
+SharePoint                           | sharepoint
+Programming Puzzles & Code Golf      | codegolf
+Home Improvement                     | diy
+Academia                             | academia
+Photography                          | photo
+The Workplace                        | workplace
+Computer Science                     | cs
+Seasoned Advice                      | cooking
+Raspberry Pi                         | raspberrypi
+StackOverflow em Português           | pt.stackoverflow.com
+Travel                               | travel
+Personal Finance & Money             | money
+Stack Apps                           | stackapps.com
+Mathematica                          | mathematica
+Theoretical Computer Science         | cstheory
+Magento                              | magento
+Bitcoin                              | bitcoin
+Cryptography                         | crypto
+Skeptics                             | skeptics
+Movies & TV                          | movies
+English Language Learners            | ell
+Salesforce                           | salesforce
+Role-playing Games                   | rpg
+Chemistry                            | chemistry
+Music: Practice & Theory             | music
+Christianity                         | christianity
+Bicycles                             | bicycles
+Network Engineering                  | networkengineering
+Project Management                   | pm
+Anime & Manga                        | anime
+Blender                              | blender
+Biology                              | biology
+Software Recommendations             | softwarerecs
+Parenting                            | parenting
+German Language                      | german
+Signal Processing                    | dsp
+Windows Phone                        | windowsphone
+Quantitative Finance                 | quant
+Physical Fitness                     | fitness
+Puzzling                             | puzzling
+Philosophy                           | philosophy
+Computational Science                | scicomp
+Arduino                              | arduino
+Worldbuilding                        | worldbuilding
+Writers                              | writers
+Sound Design                         | sound
+Personal Productivity                | productivity
+Software Quality Assurance & Testing | sqa
+History                              | history
+Data Science                         | datascience
+Ask Patents                          | patents
+Islam                                | islam
+Board & Card Games                   | boardgames
+Motor Vehicle Maintenance & Repair   | mechanics
+Reverse Engineering                  | reverseengineering
+Gardening & Landscaping              | gardening
+Video Production                     | video
+Aviation                             | aviation
+Japanese Language                    | japanese
+Space Exploration                    | space
+Homebrewing                          | homebrew
+Biblical Hermeneutics                | hermeneutics
+Robotics                             | robotics
+Chinese Language                     | chinese
+Lifehacks                            | lifehacks
+Linguistics                          | linguistics
+Mi Yodeya                            | judaism
+Spanish Language                     | spanish
+Tor                                  | tor
+Freelancing                          | freelancing
+Emacs                                | emacs
+Astronomy                            | astronomy
+Sports                               | sports
+Cognitive Sciences                   | cogsci
+Open Data                            | opendata
+Chess                                | chess
+French Language                      | french
+Expatriates                          | expatriates
+The Great Outdoors                   | outdoors
+Startups                             | startups
+Buddhism                             | buddhism
+Joomla                               | joomla
+Economics                            | economics
+Politics                             | politics
+ExpressionEngine® Answers            | expressionengine
+LEGO® Answers                        | bricks
+Russian Language                     | russian
+Martial Arts                         | martialarts
+Pets                                 | pets
+Vi and Vim                           | vi
+Mathematics Educators                | matheducators
+Amateur Radio                        | ham
+Ebooks                               | ebooks
+Earth Science                        | earthscience
+Engineering                          | engineering
+Beer                                 | beer
+Hinduism                             | hinduism
+Craft CMS                            | craftcms
+Genealogy & Family History           | genealogy
+Law                                  | law
+Open Source                          | opensource
+elementary OS                        | elementaryos
+Poker                                | poker
+History of Science and Mathematics   | hsm
+StackOverflow en español             | es.stackoverflow.com
+Sustainable Living                   | sustainability
+Health                               | health
+CiviCRM                              | civicrm
+Computer Graphics                    | computergraphics
+Italian Language                     | italian
+Coffee                               | coffee
+Music Fans                           | musicfans
+Community Building                   | communitybuilding
+Woodworking                          | woodworking
+Tridion                              | tridion
+Hardware Recommendations             | hardwarerecs
+Mythology                            | mythology
+Portuguese Language                  | portuguese
+Ethereum                             | ethereum
+3D Printing                          | 3dprinting

@@ -27,10 +27,13 @@ def set_command_list():
   You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>."""}
 
     parser = argparse.ArgumentParser(**argdict)
-    parser.parse_args()
+    parser.add_argument('-s', '--site', type=str, metavar=('SITENAME'),
+                        help="show last *user_id* for a specific site",
+                        dest='curl')
+    return parser.parse_args()
 
 
-def scrape():
+def scrape(curl):
     def get_last_user_id(curl):
         if '.' not in curl:
             curl += '.stackexchange.com'
@@ -49,11 +52,15 @@ def scrape():
 
         return [name, curl, get_last_user_id(curl)]
 
-    with open(FILENAME, 'r') as sites:
-        all_sites = [process(site) for site in sites]
-        all_sites.sort(key=lambda site: site[2], reverse=True)
-    for site in all_sites:
-        print('{} | {:20} | {:9,}'.format(*site))
+    if curl is None:  # ergo, no command-line arguments were given.
+        with open(FILENAME, 'r') as sites:
+            all_sites = [process(site) for site in sites]
+            all_sites.sort(key=lambda site: site[2], reverse=True)
+        for site in all_sites:
+            print('{} | {:20} | {:9,}'.format(*site))
+    else:
+        last_user_id = get_last_user_id(curl)
+        print('{}: {:,}+ users'.format(curl, last_user_id))
 
 
 def print_all_sites():
@@ -75,7 +82,7 @@ def print_all_sites():
             continue
         print('{:36} | {}'.format(name, curl))
 
-set_command_list()
-scrape()
+clargs = set_command_list()
+scrape(clargs.curl)
 print("--------")
 print_all_sites()

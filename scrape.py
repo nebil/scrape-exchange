@@ -27,6 +27,8 @@ def set_command_list():
   You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>."""}
 
     parser = argparse.ArgumentParser(**argdict)
+    parser.add_argument('-l', '--list', action='store_true',
+                        help="list (almost) all StackExchange's sites")
     parser.add_argument('-s', '--site', type=str, metavar=('SITENAME'),
                         help="show last *user_id* for a specific site",
                         dest='curl')
@@ -83,6 +85,7 @@ def print_all_sites():
         print('{:36} | {}'.format(name, curl))
 
 clargs = set_command_list()
-scrape(clargs.curl)
-print("--------")
-print_all_sites()
+if clargs.list:
+    print_all_sites()
+else:
+    scrape(clargs.curl)

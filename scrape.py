@@ -6,6 +6,7 @@ This source code is subject to the terms of the Mozilla Public License.
 You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 """
 
+import argparse
 import requests
 from bs4 import BeautifulSoup
 
@@ -13,6 +14,20 @@ URL_PREFIX = 'http://'
 URL_SUFFIX = '/users?tab=NewUsers&sort=creationdate'
 BLACKLIST = ['ja.', 'meta']
 FILENAME = 'sites.txt'
+
+
+def set_command_list():
+    argdict = {
+        'formatter_class': argparse.RawDescriptionHelpFormatter,
+        'description': ("A script designed to collect *user_id* "
+                        "information from StackExchange's sites."),
+        'epilog': """
+  Copyright (c) 2016, Nebil Kawas García
+  This source code is subject to the terms of the Mozilla Public License.
+  You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>."""}
+
+    parser = argparse.ArgumentParser(**argdict)
+    parser.parse_args()
 
 
 def scrape():
@@ -60,6 +75,7 @@ def print_all_sites():
             continue
         print('{:36} | {}'.format(name, curl))
 
+set_command_list()
 scrape()
 print("--------")
 print_all_sites()

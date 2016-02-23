@@ -10,7 +10,9 @@ import argparse
 import requests
 from bs4 import BeautifulSoup
 
+BS4_PARSER = 'html.parser'
 URL_PREFIX = 'http://'
+URL_KERNEL = '.stackexchange.com'
 URL_SUFFIX = '/users?tab=NewUsers&sort=creationdate'
 BLACKLIST = ['ja.', 'meta']
 FILENAME = 'sites.txt'
@@ -75,10 +77,10 @@ def scrape(curl):
         """
 
         if '.' not in curl:
-            curl += '.stackexchange.com'
+            curl += URL_KERNEL
 
         rget = requests.get(URL_PREFIX + curl + URL_SUFFIX)
-        soup = BeautifulSoup(rget.content, 'html.parser')
+        soup = BeautifulSoup(rget.content, BS4_PARSER)
 
         # search for the most recent user.
         user = soup.find('div', class_='user-details').find('a')['href']
@@ -134,11 +136,11 @@ def print_all_sites():
         """
 
         curl = url.replace(URL_PREFIX, '') \
-                  .replace('.stackexchange.com', '')
+                  .replace(URL_KERNEL, '')
         return curl
 
     rget = requests.get('http://stackexchange.com/sites?view=list#users')
-    soup = BeautifulSoup(rget.content, 'html.parser')
+    soup = BeautifulSoup(rget.content, BS4_PARSER)
     all_sites = soup('div', class_='lv-info')
     for site in all_sites:
         anchor = site.find('h2').find('a')

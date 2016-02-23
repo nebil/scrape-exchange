@@ -17,6 +17,9 @@ FILENAME = 'sites.txt'
 
 
 class CustomFormatter(argparse.RawDescriptionHelpFormatter):
+    """Inheriting from the *argparse* module, this custom formatter
+       is designed to build a more aesthetic command-line interface."""
+
     def __init__(self, prog):
         super().__init__(prog, max_help_position=28)
 
@@ -28,6 +31,8 @@ class CustomFormatter(argparse.RawDescriptionHelpFormatter):
 
 
 def set_command_list():
+    """Provide a list of command-line options."""
+
     argdict = {
         'formatter_class': CustomFormatter,
         'description': ("A script designed to collect *user_id* "
@@ -47,7 +52,28 @@ def set_command_list():
 
 
 def scrape(curl):
+    """
+    Collect data from StackExchange's sites.
+
+    parameters:  @curl: a StackExchange's site CURL <str>
+    ===========
+                 If @curl is None, it will get all sites.
+    """
+
     def get_last_user_id(curl):
+        """
+        Fetch the most recent *user_id*.
+
+        parameters:  @curl: a StackExchange's site CURL <str>
+        ===========
+
+           returns:  the newest *user_id* of the given CURL.
+           ========
+
+           example:  {@curl = 'chess'}
+           ========  should return... an integer (e.g. 9876)
+        """
+
         if '.' not in curl:
             curl += '.stackexchange.com'
 
@@ -60,6 +86,20 @@ def scrape(curl):
         return int(user_id)
 
     def process(line):
+        """
+        Parse information from a single line.
+
+        parameters:  @line: a single line of text <str>
+        ===========
+
+           returns:  a three-item list with: name,
+           ========                          CURL,
+                                             newest *user_id*.
+
+           example:  {@line = 'Unix & Linux           | unix'}
+           ========  should return... ['Unix & Linux', 'unix', <int>]
+        """
+
         name, curl = line.split('|')
         curl = curl.strip()
 
@@ -77,7 +117,22 @@ def scrape(curl):
 
 
 def print_all_sites():
+    """Fetch a list of all StackExchange's sites."""
+
     def get_curl(url):
+        """
+        Clean a site URL by removing its affixes.
+
+        parameters:  @url: a StackExchange's site URL <str>
+        ===========
+
+           returns:  the CURL (core URL) of the given site.
+           ========
+
+           example:  {@url = 'http://ux.stackexchange.com'}
+           ========  should return... 'ux'.
+        """
+
         curl = url.replace(URL_PREFIX, '') \
                   .replace('.stackexchange.com', '')
         return curl

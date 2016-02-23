@@ -95,6 +95,11 @@ Además, puedes pedir (algo de) ayuda al escribir...
 $ python3 scrape.py --help
 ```
 
+## Licencia
+Copyright © 2016, Nebil Kawas García  
+El código de este repositorio está bajo el [Mozilla Public License v2.0](
+https://www.mozilla.org/MPL/2.0/).
+
 [/]:# (Referencias implícitas)
 
 [python]:         http://www.pyzo.org/_images/xkcd_python.png

@@ -9,6 +9,7 @@ You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 import argparse
 import requests
 from bs4 import BeautifulSoup
+from collections import namedtuple
 
 BS4_PARSER = 'html.parser'
 URL_PREFIX = 'http://'
@@ -94,23 +95,24 @@ def scrape(curl):
         parameters:  @line: a single line of text <str>
         ===========
 
-           returns:  a three-item list with: name,
-           ========                          CURL,
-                                             newest *user_id*.
+           returns:  a named three-item tuple with: name,
+           ========                                 CURL,
+                                                    newest *user_id*.
 
-           example:  {@line = 'Unix & Linux           | unix'}
-           ========  should return... ['Unix & Linux', 'unix', <int>]
+           example:  {@line = 'Unix & Linux                     | unix'}
+           ========  should return... namedtuple('Unix & Linux', 'unix', <int>)
         """
 
+        site = namedtuple('site', ['name', 'curl', 'last_user_id'])
         name, curl = line.split('|')
         curl = curl.strip()
 
-        return [name, curl, get_last_user_id(curl)]
+        return site(name, curl, get_last_user_id(curl))
 
     if curl is None:  # ergo, no command-line arguments were given.
         with open(FILENAME, 'r') as sites:
             all_sites = [process(site) for site in sites]
-            all_sites.sort(key=lambda site: site[2], reverse=True)
+            all_sites.sort(key=lambda site: site.last_user_id, reverse=True)
         for site in all_sites:
             print('{} | {:20} | {:9,}'.format(*site))
     else:

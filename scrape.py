@@ -83,10 +83,16 @@ def scrape(curl):
         rget = requests.get(URL_PREFIX + curl + URL_SUFFIX)
         soup = BeautifulSoup(rget.content, BS4_PARSER)
 
-        # search for the most recent user.
-        user = soup.find('div', class_='user-details').find('a')['href']
-        user_id = user.split('/')[2]
-        return int(user_id)
+        try:
+            # search for the most recent user.
+            user = soup.find('div', class_='user-details').find('a')['href']
+        except AttributeError:
+            print("Error: '{}' doesn't exist.".format(curl))
+            print("Please, try again.")
+            raise SystemExit
+        else:
+            user_id = user.split('/')[2]
+            return int(user_id)
 
     def process(line):
         """

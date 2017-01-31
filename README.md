@@ -37,7 +37,7 @@ Para utilizar este _script_, debes seguir los siguientes pasos.
    Clona el repositorio. Luego, accede.
 
    ```sh
-   $ git clone https://github.com/nkawasg/scrape-exchange.git
+   $ git clone https://github.com/nebil/scrape-exchange.git
    $ cd scrape-exchange
    ```
 
